@@ -6,20 +6,21 @@ class CustomMenuItem extends StatelessWidget {
   final IconData icon;
   final String text;
 
+  //final Widget widget;  //!When we want to use Navigation. We will use it
 
   @override
   Widget build(BuildContext context) {
   Color color = const Color(0xFFF3F3F3);
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.fromLTRB(0, 8, 44, 8),
       child: InkWell(
         onTap: () {
           // Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget));
         },
         child: Container(
-          padding:const EdgeInsets.fromLTRB(8, 12, 8, 12),
+          padding:const EdgeInsets.fromLTRB(8, 14, 8, 14),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
+              borderRadius:const BorderRadius.horizontal(right: Radius.circular(32)),
               color:const Color(0xFF57737A), //!Theme
               boxShadow: [
                 BoxShadow(
