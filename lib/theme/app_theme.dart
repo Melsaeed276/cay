@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
-import '../helper/helper.dart';
 
-class AppTheme {
-  final Color lightTextColor = Colors.black;
-  final Color color1 = HexColor('C9FBFF');
-  final Color color2 = HexColor('C2FCF7');
-  final Color color3 = HexColor('85BDBF');
-  final Color color4 = HexColor('57737A');
-  final Color color5 = HexColor('040F0F');
+import 'text_theme.dart';
+
+class AppThemeStyle {
+  TextThemeStyle textThemeStyle = TextThemeStyle();
+  Color pColor = const Color.fromRGBO(40, 157, 210, 1);
+  Color sColor = const Color.fromRGBO(202, 232, 255, 1);
+  Color tColor = const Color.fromRGBO(5, 10, 48, 1);
+  ThemeData lightThemeData() {
+    return ThemeData(
+      backgroundColor: Colors.white,
+      scaffoldBackgroundColor: sColor,
+      appBarTheme: AppBarTheme(
+        backgroundColor: pColor,
+      ),
+      primaryColor: pColor,
+      errorColor: Colors.red,
+      //cardColor: Colors.white,
+      shadowColor: Colors.blue,
+      canvasColor: Colors.white,
+      textTheme: textThemeStyle.textTheme(false),
+    );
+  }
+
+  ThemeData darkThemeData() {
+    return ThemeData(
+      backgroundColor: sColor,
+      scaffoldBackgroundColor: tColor,
+      primaryColor: tColor,
+      primarySwatch: Colors.blue,
+      errorColor: Colors.red,
+      //cardColor: Colors.white,
+      shadowColor: sColor,
+      canvasColor: Colors.white,
+      textTheme: textThemeStyle.textTheme(true),
+    );
+  }
 }
