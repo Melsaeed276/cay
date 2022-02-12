@@ -1,3 +1,4 @@
+import 'package:cay_platform/core/constants/custom_profile_picture.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -10,9 +11,16 @@ class CustomAppBar extends StatelessWidget {
       width: double.infinity,
       height: 60,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: ()=>Navigator.pop(context), 
-          icon:const Icon(Icons.arrow_back))
+          IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(4.0),
+            child: CustomProfilePicture(height: 50, width: 50),
+          ),
         ],
       ),
     );

@@ -37,13 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
               scrollDirection: Axis.horizontal,
               children: [
                 Training(
-                  widget:const SelectedTraining(),
+                  widget: SelectedTraining(name: "Name", imagePath: image[0], category: category[0],),
                   name: "Name",
                   imagePath: image[0],
                   category: "Category",
                 ),
                 Training(
-                  widget:const SelectedTraining(),
+                  widget: SelectedTraining(name: name[0], imagePath: image[0], category: category[0],),
                   name: name[0],
                   imagePath: image[0],
                   category: category[0],
