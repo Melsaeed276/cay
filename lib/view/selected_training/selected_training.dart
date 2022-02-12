@@ -17,13 +17,13 @@ class _SelectedTrainingState extends State<SelectedTraining> {
           const CustomAppBar(),
           Container(
               decoration: BoxDecoration(
-                  color: Color(0xFFEDF7F8),
+                  color: const Color(0xFFEDF7F8),
                   borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(48)),
+                      const BorderRadius.vertical(bottom: Radius.circular(48)),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                       spreadRadius: 2,
                       blurRadius: 3,
                     )
@@ -31,12 +31,28 @@ class _SelectedTrainingState extends State<SelectedTraining> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2),
           Padding(
-            padding: EdgeInsets.only(left: 24, right: 24, top: 12),
+            padding: const EdgeInsets.only(left: 24, right: 24, top: 12),
             child: Center(
               child: Container(
-                width: MediaQuery.of(context).size.width/2,
+                width: MediaQuery.of(context).size.width / 2,
                 alignment: Alignment.topLeft,
-                child: Text("Description", style: TextStyle(fontSize: 20),),
+                child: const Text(
+                  "Description",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 24, right: 24, top: 12),
+            child: Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width / 2,
+                alignment: Alignment.topLeft,
+                child: const Text(
+                  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  style: TextStyle(fontSize: 14),
+                ),
               ),
             ),
           )
