@@ -1,8 +1,9 @@
-import 'package:cay_platform/core/constants/custom_profile_picture.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/widget.dart';
+
 class DrawerUserInfo extends StatelessWidget {
-  const DrawerUserInfo({ Key? key }) : super(key: key);
+  const DrawerUserInfo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +13,12 @@ class DrawerUserInfo extends StatelessWidget {
         children: [
           Row(
             children: [
-            const Padding(
+              const Padding(
                 padding: EdgeInsets.all(8.0),
-                child: CustomProfilePicture(height: 70, width: 70,),
+                child: CustomProfilePicture(
+                  height: 70,
+                  width: 70,
+                ),
               ),
               const SizedBox(width: 10),
               Column(

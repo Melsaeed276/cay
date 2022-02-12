@@ -1,5 +1,6 @@
-import 'package:cay_platform/core/constants/custom_app_bar.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/widget.dart';
 
 class SelectedTraining extends StatefulWidget {
   const SelectedTraining(
@@ -47,14 +48,13 @@ class _SelectedTrainingState extends State<SelectedTraining> {
                     height: MediaQuery.of(context).size.height / 3,
                     decoration: BoxDecoration(
                       boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      offset: const Offset(0, 2),
-                      blurRadius: 3,
-                      spreadRadius: 1),
-                ],
+                        BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            offset: const Offset(0, 2),
+                            blurRadius: 3,
+                            spreadRadius: 1),
+                      ],
                       image: DecorationImage(
-                        
                           image: AssetImage(widget.imagePath), //!from Database
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(12),
@@ -134,8 +134,8 @@ class _SelectedTrainingState extends State<SelectedTraining> {
               ),
               padding: const EdgeInsets.all(4),
               width: 200,
-              child:const Center(
-                  child:  Text(
+              child: const Center(
+                  child: Text(
                 "Take This Training",
                 style: TextStyle(fontSize: 20, color: Colors.black),
               )),

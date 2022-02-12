@@ -24,26 +24,34 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: const CustomDrawer(),
       backgroundColor: const Color(0xFFEDF7F8),
       body: ListView(
-        
         children: [
           const CustomAppBarForHome(),
           const Padding(
-            padding:  EdgeInsets.all(8.0),
-            child:  Text("Popular Trainign", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+            padding: EdgeInsets.all(8.0),
+            child: Text("Popular Trainign",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ),
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height / 2.3,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
                 Training(
-                  widget: SelectedTraining(name: "Name", imagePath: image[0], category: category[0],),
+                  widget: SelectedTraining(
+                    name: "Name",
+                    imagePath: image[0],
+                    category: category[0],
+                  ),
                   name: "Name",
                   imagePath: image[0],
                   category: "Category",
                 ),
                 Training(
-                  widget: SelectedTraining(name: name[0], imagePath: image[0], category: category[0],),
+                  widget: SelectedTraining(
+                    name: name[0],
+                    imagePath: image[0],
+                    category: category[0],
+                  ),
                   name: name[0],
                   imagePath: image[0],
                   category: category[0],

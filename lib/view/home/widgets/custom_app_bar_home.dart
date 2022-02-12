@@ -15,7 +15,7 @@ class CustomAppBarForHome extends StatelessWidget {
                     alignment: Alignment.center,
                     child: IconButton(
                       onPressed: () => Scaffold.of(context).openDrawer(),
-                      icon: Icon(Icons.menu),
+                      icon: const Icon(Icons.menu),
                       color: Colors.black,
                     ),
                   )),

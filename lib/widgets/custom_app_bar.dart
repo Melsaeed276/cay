@@ -1,5 +1,6 @@
-import 'package:cay_platform/core/constants/custom_profile_picture.dart';
 import 'package:flutter/material.dart';
+
+import 'custom_profile_picture.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
