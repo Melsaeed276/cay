@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "935856817689",
+    "project_id": "cay-platform",
+    "storage_bucket": "cay-platform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935856817689:android:dc463cf93e57013f018c88",
+        "android_client_info": {
+          "package_name": "dev.fluppy.cay_platform"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935856817689-3qc4kh0g6inktu1nerkobpevqj6tslo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkYjPUsisqcR54AOJ0zWEyc1rPofkpWS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935856817689-3qc4kh0g6inktu1nerkobpevqj6tslo0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
