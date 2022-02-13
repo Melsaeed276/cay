@@ -65,7 +65,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 200,
+                  height: 25,
                 ),
                 TextFormField(
                   keyboardType: TextInputType.visiblePassword,
