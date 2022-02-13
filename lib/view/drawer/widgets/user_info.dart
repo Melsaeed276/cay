@@ -23,25 +23,22 @@ class DrawerUserInfo extends StatelessWidget {
               const SizedBox(width: 10),
               Padding(
                 padding: const EdgeInsets.all(2.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width/2,
-                      child:const Text(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width/1.25-140,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const[
+                       Text(
                         "Christina Pristine", //! We have to take these information from to database
                         style: TextStyle(fontWeight: FontWeight.w500),
                       ),
-                    ),
-                    const SizedBox(height: 2,),
-                    Container(
-                      width: MediaQuery.of(context).size.width/2,                      
-                      child:const Text(
+                       SizedBox(height: 2,),
+                       Text(
                         "christinapristine@gmail.com", //! We have to take these information from to database
                         style: TextStyle(color: Colors.grey, fontSize: 13),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               )
             ],
