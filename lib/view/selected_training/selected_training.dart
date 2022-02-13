@@ -1,25 +1,27 @@
+import 'package:cay_platform/view/selected_training/widgets/description.dart';
+import 'package:cay_platform/view/selected_training/widgets/general_top.dart';
+import 'package:cay_platform/view/selected_training/widgets/take_button.dart';
+import 'package:cay_platform/view/selected_training/widgets/what_will_you_learn.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/widget.dart';
 
 class SelectedTraining extends StatefulWidget {
-  const SelectedTraining(
-      {Key? key,
-      required this.imagePath,
-      required this.name,
-      required this.category})
-      : super(key: key);
+  const SelectedTraining({
+    Key? key,
+    required this.category,
+    required this.name,
+    required this.imagePath,
+  }) : super(key: key);
 
-  final String imagePath, name, category;
+  final String name, imagePath, category;
 
   @override
   _SelectedTrainingState createState() => _SelectedTrainingState();
 }
 
 class _SelectedTrainingState extends State<SelectedTraining> {
-  Color color = const Color(0xFFEDF7F8);
-  Color color2 = const Color(0xFFC9FBFF);
-
+  Color color2 = Color.fromARGB(255, 245, 251, 252);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,120 +29,53 @@ class _SelectedTrainingState extends State<SelectedTraining> {
       body: ListView(
         children: [
           const CustomAppBar(),
+          GeneralTop(
+              category: widget.category,
+              imagePath: widget.imagePath,
+              name: widget.name),
+          const Description(),
+          const SizedBox(height: 30),
           Container(
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius:
-                    const BorderRadius.vertical(bottom: Radius.circular(48)),
+            height: 40,
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+                color: const Color(0xFFEDF7F8),
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(32),
+                ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    offset: const Offset(0, 5),
+                    color: Colors.blueGrey.withOpacity(0.2),
+                    offset: const Offset(0, -3),
                     spreadRadius: 2,
-                    blurRadius: 3,
+                    blurRadius: 2,
                   )
-                ],
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width / 2.3,
-                    height: MediaQuery.of(context).size.height / 3,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            offset: const Offset(0, 2),
-                            blurRadius: 3,
-                            spreadRadius: 1),
-                      ],
-                      image: DecorationImage(
-                          image: AssetImage(widget.imagePath), //!from Database
-                          fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      widget.name, //!From Database
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      widget.category, //!From Database
-                      style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
-                    ),
-                  ),
-                ],
-              ),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 2),
-          Padding(
-            padding: const EdgeInsets.only(left: 12, right: 12, top: 12),
-            child: Center(
-              child: Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: color,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade300.withOpacity(0.3),
-                          offset: const Offset(0, 3),
-                          blurRadius: 3,
-                          spreadRadius: 3),
-                    ],
-                  ),
-                  width: MediaQuery.of(context).size.width / 1.4,
-                  alignment: Alignment.topLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Description",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.grey),
-                      ),
-                    ],
-                  )),
+                ]),
+            child: const Text(
+              "What will you learn",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
+          const WhatWillYouLearn(),
+          Container(
+            padding: const EdgeInsets.all(8),
+            height: 40,
+            decoration: BoxDecoration(
+                color: const Color(0xFFEDF7F8),
+                borderRadius: const BorderRadius.vertical(
+                  bottom: Radius.circular(32),
+                ),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      offset: const Offset(0, 3),
-                      blurRadius: 3,
-                      spreadRadius: 3),
-                ],
-              ),
-              padding: const EdgeInsets.all(4),
-              width: 200,
-              child: const Center(
-                  child: Text(
-                "Take This Training",
-                style: TextStyle(fontSize: 20, color: Colors.black),
-              )),
-            ),
-          )
+                    color: Colors.blueGrey.withOpacity(0.2),
+                    offset: const Offset(0, 3),
+                    spreadRadius: 2,
+                    blurRadius: 2,
+                  )
+                ]),
+          ),
+          const SizedBox(height: 30),
+          const TakeTrainingButton()
         ],
       ),
     );
