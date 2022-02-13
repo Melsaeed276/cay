@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../logics/logics.dart';
+import '../../../services/auth_service/auth_service.dart';
 import '../../../theme/text_field_theme.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/page_route.dart';
@@ -24,7 +25,7 @@ class _SignInPageState extends State<SignInPage> {
 
   final formKey = GlobalKey<FormState>();
 
-  //final AuthService _authService = AuthService();
+  final AuthService _authService = AuthService();
   var _isLoading = false;
 
   @override
@@ -152,15 +153,15 @@ class _SignInPageState extends State<SignInPage> {
 
   signUp(BuildContext context) async {
     if (formKey.currentState!.validate()) {
-      // var signup = await _authService.signIn(
-      //     emailController.text, passwordController.text, context);
-      // if (signup == true) {
-      //   setState(() {
-      //     _isLoading = false;
-      //   });
-      Navigator.of(context).pushReplacement(
-          PageRouteManager(const MyHomePage(), const Offset(1.0, 0.0)));
-      //}
+      var signup = await _authService.signIn(
+          emailController.text, passwordController.text, context);
+      if (signup == true) {
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.of(context).pushReplacement(
+            PageRouteManager(const MyHomePage(), const Offset(1.0, 0.0)));
+      }
     } else {
       setState(() {
         _isLoading = false;

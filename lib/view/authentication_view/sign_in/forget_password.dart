@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../logics/logics.dart';
+import '../../../services/auth_service/auth_service.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/page_route.dart';
 import 'sign_in.dart';
@@ -18,7 +19,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
 
   final _formKey = GlobalKey<FormState>();
 
-  //final AuthService _authService = AuthService();
+  final AuthService _authService = AuthService();
 
   var _isLoading = false;
   @override
@@ -113,15 +114,15 @@ class _ForgetPasswordState extends State<ForgetPassword> {
 
   resetPasswordRequest(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      // var signup =
-      //     await _authService.forgetPassword(emailController.text, context);
-      // if (signup == true) {
-      //   setState(() {
-      //     _isLoading = false;
-      //   });
+      var signup =
+          await _authService.forgetPassword(emailController.text, context);
+      if (signup == true) {
+        setState(() {
+          _isLoading = false;
+        });
         Navigator.of(context).pushReplacement(
             PageRouteManager(const SignInPage(), const Offset(1.0, 0.0)));
-      //}
+      }
     } else {
       setState(() {
         _isLoading = false;

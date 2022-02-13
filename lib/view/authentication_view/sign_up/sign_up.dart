@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../logics/logics.dart';
+import '../../../services/auth_service/auth_service.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/page_route.dart';
-import '../../home/home.dart';
-import '../widgets/background.dart';
+import '../../view.dart';
 import '../sign_in/sign_in.dart';
-
+import '../widgets/background.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   final formKey = GlobalKey<FormState>();
 
-  //final AuthService _authService = AuthService();
+  final AuthService _authService = AuthService();
 
   var _isLoading = false;
 
@@ -130,15 +130,15 @@ class _SignUpPageState extends State<SignUpPage> {
 
   signIn(BuildContext context) async {
     if (formKey.currentState!.validate()) {
-      // var signup = await _authService.signUp(
-      //     emailController.text, passwordController.text, context);
-      // if (signup == true) {
-      //   setState(() {
-      //     _isLoading = false;
-      //   });
+      var signup = await _authService.signUp(
+          emailController.text, passwordController.text, context);
+      if (signup == true) {
+        setState(() {
+          _isLoading = false;
+        });
         Navigator.of(context).pushReplacement(
-            PageRouteManager(MyHomePage(), const Offset(1.0, 0.0)));
-     // }
+            PageRouteManager(const IntroScreen(), const Offset(1.0, 0.0)));
+      }
     } else {
       setState(() {
         _isLoading = false;
