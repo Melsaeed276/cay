@@ -44,7 +44,6 @@ class BackGround extends StatelessWidget {
             bottom: 0,
             child: Container(
               width: info.size.width,
-              height: info.size.height * 0.56,
               padding: const EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
                 color: Theme.of(context).backgroundColor,
