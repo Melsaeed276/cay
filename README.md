@@ -11,6 +11,11 @@ Bu uygulamadaki hedefimiz Mesleğe yeni başlamak isteyen ve ne öğrenmesi gere
   <img src="assets/screenshots/mobileDev.jpg" width="200" >
   <img src="assets/screenshots/webDev.jpg" width="200" >
   <img src="assets/screenshots/androidDev.jpg" width="200" >
+  <img src="assets/screenshots/ss.png" width="200" >
+  <img src="assets/screenshots/ss1.png" width="200" >
+  <img src="assets/screenshots/ss2.png" width="200" >
+  <img src="assets/screenshots/ss3.png" width="200" >
+
 </p>
 
 #Gelecekteki hedeflerimiz
