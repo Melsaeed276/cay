@@ -38,22 +38,32 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Training(
                   widget: SelectedTraining(
-                    name: "Name",
-                    imagePath: image[0],
-                    category: category[0],
-                  ),
-                  name: "Name",
-                  imagePath: image[0],
-                  category: "Category",
-                ),
-                Training(
-                  widget: SelectedTraining(
                     name: name[0],
-                    imagePath: image[0],
+                    imagePath: image[0], //! We have to take all of them from database
                     category: category[0],
                   ),
                   name: name[0],
                   imagePath: image[0],
+                  category: category[0],
+                ),
+                Training(
+                  widget: SelectedTraining(
+                    name: name[1],
+                    imagePath: image[1],
+                    category: category[0],
+                  ),
+                  name: name[1],
+                  imagePath: image[1],
+                  category: category[0],
+                ),
+                Training(
+                  widget: SelectedTraining(
+                    name: name[2],
+                    imagePath: image[2],
+                    category: category[0],
+                  ),
+                  name: name[2],
+                  imagePath: image[2],
                   category: category[0],
                 ),
               ],
