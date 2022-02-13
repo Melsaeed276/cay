@@ -58,6 +58,10 @@ flutter:
   assets:
     - assets/mobileApps.jpg
     - assets/user/avatar1.png
+    - assets/user/avatar2.png
+    - assets/user/avatar3.png
+    - assets/user/avatar4.png
+    - assets/user/avatar5.png
     - assets/android.jpg
     - assets/web.png
     
