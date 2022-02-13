@@ -4,7 +4,7 @@ import '../../../logics/logics.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/page_route.dart';
 import '../../home/home.dart';
-import '../background.dart';
+import '../widgets/background.dart';
 import '../sign_in/sign_in.dart';
 
 

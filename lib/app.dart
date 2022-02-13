@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'theme/text_theme.dart';
 import 'view/view.dart';
 
 class MyApp extends StatelessWidget {
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
       title: 'Cay Platform',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: TextThemeStyle().textTheme(false),
       ),
-      home: const MyHomePage(),
+      home: const SignInPage(),
     );
   }
 }

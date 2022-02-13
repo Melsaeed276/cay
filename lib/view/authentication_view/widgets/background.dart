@@ -21,17 +21,14 @@ class BackGround extends StatelessWidget {
               const SizedBox(
                 height: 100,
               ),
-              Image.asset(
-                'assets/images/logo.png',
-                fit: BoxFit.cover,
-                height: 200,
-                width: 200,
+              const FlutterLogo(
+                size: 150,
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Solution Center',
+                'Çay Platform',
                 style: Theme.of(context).textTheme.headline4,
               ),
               const SizedBox(

@@ -5,8 +5,8 @@ import '../../../theme/text_field_theme.dart';
 import '../../../theme/theme.dart';
 import '../../../widgets/page_route.dart';
 import '../../view.dart';
-import '../background.dart';
 import '../sign_up/sign_up.dart';
+import '../widgets/background.dart';
 import 'forget_password.dart';
 
 class SignInPage extends StatefulWidget {
@@ -153,8 +153,8 @@ class _SignInPageState extends State<SignInPage> {
       //   setState(() {
       //     _isLoading = false;
       //   });
-        Navigator.of(context).pushReplacement(
-            PageRouteManager(const MyHomePage(), const Offset(1.0, 0.0)));
+      Navigator.of(context).pushReplacement(
+          PageRouteManager(const MyHomePage(), const Offset(1.0, 0.0)));
       //}
     } else {
       setState(() {

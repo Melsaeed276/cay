@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class TextThemeStyle {
   Color darkColor = const Color.fromRGBO(5, 10, 48, 1);
   Color lightColor = const Color.fromRGBO(5, 10, 48, 1);
+
   TextTheme textTheme(bool isDark) {
     return TextTheme(
       headline1: GoogleFonts.montserrat(
