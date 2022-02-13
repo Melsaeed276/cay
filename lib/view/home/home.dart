@@ -85,16 +85,16 @@ class _MyHomePageState extends State<MyHomePage> {
           //We can use gridview build in here
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:const [
-              Mentors(name: "Mentor 1", imagePath: "assets/user/avatar2.png"),
-              Mentors(name: "Mentor 2", imagePath: "assets/user/avatar3.png"),
+            children: [
+              Mentors(name: "Mentor 1", imagePath: "assets/user/avatar2.png", category: category[0],),
+              Mentors(name: "Mentor 2", imagePath: "assets/user/avatar3.png", category: category[0],),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:const [
-              Mentors(name: "Mentor 3", imagePath: "assets/user/avatar4.png"),
-              Mentors(name: "Mentor 4", imagePath: "assets/user/avatar5.png"),
+            children: [
+              Mentors(name: "Mentor 3", imagePath: "assets/user/avatar4.png", category: category[0],),
+              Mentors(name: "Mentor 4", imagePath: "assets/user/avatar5.png", category: category[0],),
             ],
           ),
         ],

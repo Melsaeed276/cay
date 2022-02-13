@@ -5,9 +5,10 @@ class Mentors extends StatelessWidget {
     Key? key,
     required this.imagePath,
     required this.name,
+    required this.category,
   }) : super(key: key);
 
-  final imagePath, name;
+  final imagePath, name, category;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +53,19 @@ class Mentors extends StatelessWidget {
             ),
              Expanded(
               child: Padding(
-                padding: EdgeInsets.all(8),
-                child: Text(
-                  name,
+                padding:const EdgeInsets.all(8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      name,
+                      style:const TextStyle(fontSize: 16),
+                    ),
+                    Text(
+                      category,
+                      style:const TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                  ],
                 ),
               ),
               flex: 1,
