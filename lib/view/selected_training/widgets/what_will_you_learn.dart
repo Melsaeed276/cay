@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 class WhatWillYouLearn extends StatelessWidget {
   const WhatWillYouLearn({ Key? key }) : super(key: key);
 
+/* 
+    We have to take skills from Firestore
+
+ */
+
+
+
   @override
   Widget build(BuildContext context) {
     return Container(

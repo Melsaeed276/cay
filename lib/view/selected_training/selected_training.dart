@@ -17,6 +17,8 @@ class SelectedTraining extends StatefulWidget {
 
   final String name, imagePath, category, description;
 
+  
+
   @override
   _SelectedTrainingState createState() => _SelectedTrainingState();
 }
@@ -31,7 +33,7 @@ class _SelectedTrainingState extends State<SelectedTraining> {
         children: [
           const CustomAppBar(),
           GeneralTop(
-              category: widget.category,
+              category: widget.category,   
               imagePath: widget.imagePath,
               name: widget.name),
           Description(description: widget.description,),

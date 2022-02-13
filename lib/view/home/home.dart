@@ -1,7 +1,7 @@
 import 'package:cay_platform/model/trainings.dart';
 import 'package:cay_platform/view/drawer/drawer.dart';
 import 'package:cay_platform/view/home/widgets/custom_app_bar_home.dart';
-import 'package:cay_platform/view/home/widgets/mentros.dart';
+import 'package:cay_platform/view/home/widgets/mentors.dart';
 import 'package:cay_platform/view/home/widgets/training.dart';
 import 'package:cay_platform/view/selected_training/selected_training.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +21,9 @@ class _MyHomePageState extends State<MyHomePage> {
     List image = Provider.of<Trainings>(context).imagePath;
     List category = Provider.of<Trainings>(context).category;
     List description = Provider.of<Trainings>(context).description;
+    // WE HAVE TO PUT CODE HERE FOR THE TAKE DATA FROM FİRESTORE
+    // We just have to change these codes according to firestore                                                                                                                                                                            
+
 
     return Scaffold(
       drawer: const CustomDrawer(),
