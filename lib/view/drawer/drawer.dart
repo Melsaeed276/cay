@@ -8,7 +8,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width/1.25,
+      width: MediaQuery.of(context).size.width / 1.25,
       child: Drawer(
         child: SafeArea(
           child: Column(
@@ -17,15 +17,18 @@ class CustomDrawer extends StatelessWidget {
               Column(
                 children: const [
                   DrawerUserInfo(),
-                  CustomMenuItem(icon: Icons.account_circle, text: "My Account"),
+                  CustomMenuItem(
+                      icon: Icons.account_circle, text: "My Account"),
                   CustomMenuItem(icon: Icons.settings, text: "Settings"),
-                  CustomMenuItem(icon: Icons.dashboard_outlined, text: "Dashboard"),
-                  CustomMenuItem(icon: Icons.person_pin_circle_outlined, text:  "Mentors"),
+                  CustomMenuItem(
+                      icon: Icons.dashboard_outlined, text: "Dashboard"),
+                  CustomMenuItem(
+                      icon: Icons.person_pin_circle_outlined, text: "Mentors"),
                   CustomMenuItem(icon: Icons.badge_outlined, text: "Companies"),
                   CustomMenuItem(icon: Icons.info_outline, text: "About"),
                 ],
               ),
-              const SignOutPart()
+              SignOutPart()
             ],
           ),
         ),
@@ -33,4 +36,3 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 }
-

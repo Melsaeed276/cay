@@ -8,57 +8,63 @@ class BackGround extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final info = MediaQuery.of(context);
-    return SingleChildScrollView(
-      physics: const ClampingScrollPhysics(),
-      child: SizedBox(
-        //color: Theme.of(context).backgroundColor,
-        width: info.size.width,
-        height: info.size.height,
-        child: Scrollbar(
-          thickness: 6,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 100,
-              ),
-              const FlutterLogo(
-                size: 150,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Çay Platform',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Expanded(
-                child: Container(
-                  width: info.size.width,
-                  padding: const EdgeInsets.only(top: 20),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).backgroundColor,
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30)),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
-                        child: child,
-                      ),
-                    ],
-                  ),
+    return SizedBox(
+      //color: Theme.of(context).backgroundColor,
+      width: info.size.width,
+      height: info.size.height,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Align(
+            // alignment: Alignment.topCenter,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Spacer(
+                  flex: 1,
                 ),
-              ),
-            ],
+                const FlutterLogo(
+                  size: 150,
+                ),
+                Text(
+                  'Çay Platform',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                const Spacer(
+                  flex: 4,
+                ),
+              ],
+            ),
           ),
-        ),
+          const SizedBox(
+            height: 10,
+          ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              width: info.size.width,
+              height: info.size.height * 0.56,
+              padding: const EdgeInsets.only(top: 20),
+              decoration: BoxDecoration(
+                color: Theme.of(context).backgroundColor,
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: child,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

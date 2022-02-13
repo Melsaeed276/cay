@@ -40,105 +40,110 @@ class _SignInPageState extends State<SignInPage> {
           onChanged: () {
             Form.of(primaryFocus!.context!)!.save();
           },
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 25),
-                child: Text(
-                  'Sign in',
-                  style: Theme.of(context).textTheme.headline5,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 25),
+                  child: Text(
+                    'Sign in',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
                 ),
-              ),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                controller: emailController,
-                validator: (value) {
-                  return emailChecker(value);
-                },
-                autocorrect: false,
-                decoration: textFormFieldDecoration(
-                  borderRadius: 20,
-                  label: 'Email',
-                  hint: 'Enter your email',
-                  context: context,
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
+                  validator: (value) {
+                    return emailChecker(value);
+                  },
+                  autocorrect: false,
+                  decoration: textFormFieldDecoration(
+                    borderRadius: 20,
+                    label: 'Email',
+                    hint: 'Enter your email',
+                    context: context,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.visiblePassword,
-                controller: passwordController,
-                obscureText: true,
-                autocorrect: false,
-                autofocus: false,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
-                  } else {
-                    return null;
-                  }
-                },
-                decoration: textFormFieldDecoration(
-                  borderRadius: 20,
-                  label: 'Password',
-                  hint: 'Enter your Password',
-                  context: context,
+                const SizedBox(
+                  height: 25,
                 ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ColoredBox(
-                  color: Colors.transparent,
+                TextFormField(
+                  keyboardType: TextInputType.visiblePassword,
+                  controller: passwordController,
+                  obscureText: true,
+                  autocorrect: false,
+                  autofocus: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    } else {
+                      return null;
+                    }
+                  },
+                  decoration: textFormFieldDecoration(
+                    borderRadius: 20,
+                    label: 'Password',
+                    hint: 'Enter your Password',
+                    context: context,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: ColoredBox(
+                    color: Colors.transparent,
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(PageRouteManager(
+                            const ForgetPassword(), const Offset(1.0, 0.0)));
+                      },
+                      child: Text(
+                        'forget password',
+                        style: Theme.of(context).textTheme.caption,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                SizedBox(
+                  width: info.size.width,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: buttonStyle(context),
+                    onPressed: () {
+                      setState(() {
+                        _isLoading = true;
+                      });
+                      signUp(context);
+                    },
+                    child: _isLoading == false
+                        ? Text(
+                            'Sign in',
+                            style: Theme.of(context).textTheme.button,
+                          )
+                        : CircularProgressIndicator(
+                            color: Theme.of(context).textTheme.button!.color,
+                          ),
+                  ),
+                ),
+                SizedBox(
                   child: TextButton(
                     onPressed: () {
-                      Navigator.of(context).push(PageRouteManager(
-                          const ForgetPassword(), const Offset(1.0, 0.0)));
+                      Navigator.of(context).pushReplacement(PageRouteManager(
+                          const SignUpPage(), const Offset(0.0, -1.0)));
                     },
                     child: Text(
-                      'forget password',
+                      'Create a new account',
                       style: Theme.of(context).textTheme.caption,
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              SizedBox(
-                width: info.size.width,
-                height: 50,
-                child: ElevatedButton(
-                  style: buttonStyle(context),
-                  onPressed: () {
-                    setState(() {
-                      _isLoading = true;
-                    });
-                    signUp(context);
-                  },
-                  child: _isLoading == false
-                      ? Text(
-                          'Sign in',
-                          style: Theme.of(context).textTheme.button,
-                        )
-                      : CircularProgressIndicator(
-                          color: Theme.of(context).textTheme.button!.color,
-                        ),
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              SizedBox(
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(PageRouteManager(
-                        const SignUpPage(), const Offset(0.0, -1.0)));
-                  },
-                  child: Text(
-                    'Create a new account',
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

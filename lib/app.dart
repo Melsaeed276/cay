@@ -1,3 +1,4 @@
+import 'package:cay_platform/services/auth_service/auth_service.dart';
 import 'package:flutter/material.dart';
 
 import 'theme/text_theme.dart';
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: TextThemeStyle().textTheme(false),
       ),
-      home: const SignInPage(),
+      home: AuthService().getUser() == null
+          ? const SignInPage()
+          : const MyHomePage(),
+      // I hope it will work
     );
   }
 }
