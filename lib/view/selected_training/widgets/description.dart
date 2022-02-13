@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class Description extends StatelessWidget {
   const Description({
     Key? key,
+    required this.description
   }) : super(key: key);
+
+  final description;
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +32,15 @@ class Description extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
+              children:  [
+               const Text(
                   "Description",  
                   style: TextStyle(fontSize: 20),
                 ),
                 SingleChildScrollView(
                   child: Text(
-                    "Curabitur ultricies mauris eu diam cursus, a dignissim lorem semper. Etiam ut facilisis nunc. Ut et vestibulum lacus, vel commodo lorem. Maecenas ac nulla congue, vulputate ante vel, semper sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum ultrices elit quis turpis feugiat ornare. Vivamus eleifend feugiat pharetra. Morbi quis odio a nulla ultricies mollis. Cras sed purus euismod, porttitor massa ac, feugiat odio.",
-                    style: TextStyle(
+                    description,
+                    style: const TextStyle(
                         fontSize: 14,
                         fontStyle: FontStyle.italic,
                         color: Colors.grey),

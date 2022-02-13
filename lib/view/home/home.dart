@@ -19,6 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List name = Provider.of<Trainings>(context).name;
     List image = Provider.of<Trainings>(context).imagePath;
     List category = Provider.of<Trainings>(context).category;
+    List description = Provider.of<Trainings>(context).description;
 
     return Scaffold(
       drawer: const CustomDrawer(),
@@ -41,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     name: name[0],
                     imagePath: image[0], //! We have to take all of them from database
                     category: category[0],
+                    description: description[0],
                   ),
                   name: name[0],
                   imagePath: image[0],
@@ -51,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     name: name[1],
                     imagePath: image[1],
                     category: category[0],
+                    description: description[1],
                   ),
                   name: name[1],
                   imagePath: image[1],
@@ -61,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     name: name[2],
                     imagePath: image[2],
                     category: category[0],
+                    description: description[2],
                   ),
                   name: name[2],
                   imagePath: image[2],
