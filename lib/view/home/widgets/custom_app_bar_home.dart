@@ -19,6 +19,8 @@ class CustomAppBarForHome extends StatelessWidget {
                       color: Colors.black,
                     ),
                   )),
+                  const SizedBox(width: 10),
+                  const Text("Cay Platform", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         ],
       ),
     );

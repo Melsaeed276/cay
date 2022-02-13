@@ -4,7 +4,7 @@ class TakeTrainingButton extends StatelessWidget {
   const TakeTrainingButton({
     Key? key,
   }) : super(key: key);
-
+  //? If user want to take this lesson he/she can use this button
   @override
   Widget build(BuildContext context) {
     return Padding(

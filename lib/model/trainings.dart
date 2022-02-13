@@ -1,3 +1,10 @@
+/*
+
+  We can take database from Firestore
+
+ */
+
+
 class Trainings {
   final List _name = [
     "Mobile Aplication Development",
@@ -30,5 +37,5 @@ class Trainings {
 
   List get description => _description;
 
-  
+
 }
